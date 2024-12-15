@@ -3,6 +3,7 @@ local M = {}
 ---@class GuessIndentConfig
 ---@field auto_cmd boolean? Whether to create autocommand to automatically detect indentation
 ---@field override_editorconfig boolean? Whether or not to override indentation set by Editorconfig
+---@field auto_retab boolean? Whether to auto retab after guess indentation
 ---@field filetype_exclude string[]? Filetypes to ignore indentation detection in
 ---@field buftype_exclude string[]? Buffer types to ignore indentation detection in
 ---@field on_tab_options table<string, any>? A table of vim options when tabs are detected
@@ -15,6 +16,7 @@ local M = {}
 local default_config = {
   auto_cmd = true,
   override_editorconfig = false,
+  auto_retab = true,
   filetype_exclude = {
     "netrw",
     "tutor",

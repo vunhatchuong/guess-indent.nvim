@@ -358,6 +358,10 @@ function M.set_from_buffer(bufnr, context, silent)
 
   local indentation = M.guess_from_buffer(bufnr)
   set_indentation(indentation, bufnr, silent)
+
+  if config.auto_retab then
+    vim.cmd("retab!")
+  end
 end
 
 ---@param options GuessIndentConfig
